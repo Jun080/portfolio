@@ -4,7 +4,7 @@ const IconButton = ({ label, icon, url }) => {
   const isCVButton = label === 'CV';
 
   return (
-    <a href={isCVButton ? './img/cv.pdf' : url} 
+    <a href={isCVButton ? '././public/cv.pdf' : url} 
     download={isCVButton ? 'cv.pdf' : undefined}
     target='_blank' 
     rel='noopener noreferrer' 
