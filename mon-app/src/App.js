@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import img from './img/image-profil.jpg'
+import IconButton from './components/button.jsx'
+import { FaGithub, FaLinkedin, FaPaperclip } from 'react-icons/fa'; // Importez l'icône LinkedIn également si nécessaire
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex items-center mt-16 flex-col'>
+      <div className='w-28 h-28 rounded-full overflow-hidden'>
+        <img src={img} alt=''/>
+      </div>
+      <div className='mt-5 font-semibold'>@MorganeDassonville</div>
+      <div className='my-3 flex flex-col'>
+        <IconButton label="GitHub" icon={FaGithub} url={'https://github.com/Jun080'} />
+        <IconButton label="LinkedIn" icon={FaLinkedin} url={'https://github.com/Jun080'} />
+        <IconButton label="CV" icon={FaPaperclip} />
+      </div>
     </div>
   );
 }
