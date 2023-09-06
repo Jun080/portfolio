@@ -2,6 +2,7 @@
   "name": "mon-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jun080.github.io/portfolio",
   "dependencies": {
     "@coreui/react": "^5.0.0-alpha.0",
     "@emotion/react": "^11.11.1",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
