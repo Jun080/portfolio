@@ -1,0 +1,129 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	#experience {
+        padding: f.rem(150) 0;
+        padding-bottom: f.rem(170);
+        display: grid;
+
+        & .title {
+            display: grid;
+            grid-template-columns: 0.5fr 2fr;
+            gap: 10rem;
+            max-width: 90%;
+            margin: auto;
+            margin-bottom: f.rem(70);
+        }
+
+        & .cards-experience {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(150);
+
+            & .experience {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: f.rem(50);
+                align-items: center;
+
+                & .text-experience {
+                    background-color: v.$pale-green;
+                    border-radius: 10px;
+                    padding: f.rem(40);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    & .gap-15 {
+                        & li {
+                            gap: f.rem(4);
+                        }
+
+                        & img {
+                            margin-right: f.rem(15);
+                        }
+                    }
+                }
+    
+                & .stack {
+                    border-top: f.rem(2) solid v.$green;
+                    margin-top: f.rem(40);
+                    padding-top: f.rem(30);
+                    display: flex;
+                    gap: f.rem(30);
+                }
+    
+                & .img-experience {
+                    width: 100%;
+                    height: auto;
+                    border-radius: f.rem(20);
+                    background-color: v.$green;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        #experience {
+            padding: f.rem(100) f.rem(20);
+
+            & .title {
+                grid-template-columns: 1fr;
+                gap: f.rem(40);
+                text-align: center;
+            }
+
+            & .cards-experience {
+                gap: f.rem(100);
+
+                & .experience {
+                    grid-template-columns: 1fr;
+                    gap: f.rem(30);
+
+                    & .text-experience {
+                        padding: f.rem(30);
+                    }
+
+                    & .stack {
+                        flex-wrap: wrap;
+                        gap: f.rem(20);
+                        margin-top: f.rem(30);
+                        padding-top: f.rem(20);
+                    }
+
+                    & .img-experience {
+                        order: -1;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 978px) {
+        #experience {
+            padding: f.rem(80) 0;
+        }
+    }
+
+    @media (max-width: 567px) {
+        #experience {
+            padding: f.rem(80) 0 f.rem(50);
+
+            & .cards-experience {
+                gap: f.rem(80);
+
+                & .experience {
+                    & .text-experience {
+                        padding: f.rem(20);
+                    }
+
+                    & .stack {
+                        gap: f.rem(15);
+                    }
+                }
+            }
+        }
+    }
+
+}

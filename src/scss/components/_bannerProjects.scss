@@ -1,0 +1,67 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	.projects-banner {
+        overflow: hidden;
+        position: relative;
+        background-color: v.$green;
+        padding: f.rem(10);
+        z-index: 5;
+
+        & .group-wrapper {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+            pointer-events: none;
+        }
+    
+        & .projects-container {
+            display: flex;
+            gap: f.rem(100);
+
+            & .group {
+                display: flex;
+                gap: f.rem(100);
+    
+                & a {
+                    display: flex;
+                    align-items: center;
+                    gap: f.rem(10);
+                    color: v.$pale-green;
+                    min-width: max-content;
+                    font-weight: 700;
+                    padding: f.rem(15);
+                    border-radius: 10px;
+
+                    & img {
+                        height: f.rem(30);
+                        z-index: 1;
+                    }
+        
+                    &:hover {
+                        color: v.$red;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner-under {
+        position: absolute;
+        top: 0;
+        width: calc(100% - 1px);
+        height: f.rem(80);
+        background-color: v.$white;
+        border-top: f.rem(3) solid v.$green;
+        border-bottom: f.rem(3) solid v.$green;
+        z-index: 2;
+        transform: rotate(-2deg);
+    }
+
+    @media (max-width: 978px) {
+        .projects-banner {
+            margin-top: f.rem(80);
+        }
+    }
+}

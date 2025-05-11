@@ -1,0 +1,69 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	.btn {
+		padding: f.rem(10) f.rem(16);
+		display: inline-block;
+		border-radius: f.rem(6);
+		text-decoration: none;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&-red {
+			background-color: v.$red;
+			color: v.$white;
+			border: f.rem(1) solid v.$red;
+			font-weight: 500;
+
+			&:hover {
+				background-color: v.$pale-red;
+				color: v.$text-red;
+			}
+		}
+
+		&-green {
+			background-color: v.$green;
+			color: v.$white;
+			border: f.rem(1) solid v.$green;
+			font-weight: 500;
+
+			&:hover {
+				background-color: v.$pale-green;
+				color: v.$black;
+			}
+			
+		}
+	}
+
+	.badge {
+		padding: f.rem(5) f.rem(15);
+		border-radius: f.rem(20);
+		max-width: max-content;
+		margin: f.rem(10) 0;
+
+		&-red {
+			border: f.rem(2) solid v.$red;
+			background-color: v.$pale-red;
+			color: v.$red;
+		}
+
+		&-green {
+			border: f.rem(2) solid v.$green;
+			background-color: v.$pale-green;
+			color: v.$green;
+		}
+	}
+
+	@media (max-width: 978px) {
+		.btn {
+			width: 100%;
+			
+			&:hover {
+				transform: none;
+			}
+		}
+	}
+}

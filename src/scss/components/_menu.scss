@@ -1,0 +1,124 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	nav {
+        position: fixed;
+        z-index: 10;
+        top: f.rem(10);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--green);
+        border-radius: 50px;
+        padding: 1.5rem 5rem;
+        margin-bottom: 2rem;
+        min-width: f.rem(860);
+        margin: f.rem(20) auto;
+        border: f.rem(3) solid var(--grey);
+
+        & ul {
+            display: flex;
+            justify-content: space-between;
+
+            & a {
+                color: var(--pale-green);
+                font-weight: 600;
+            }
+        }
+    }
+
+    @media (max-width: 978px) {
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: v.$green;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+                transform: translateX(0);
+            }
+
+            & nav {
+                min-width: auto;
+                margin: f.rem(100) 0 0;
+                padding: f.rem(20) f.rem(0);
+                border-radius: f.rem(0);
+                border: none;
+
+                & ul {
+                    list-style: none;
+                    flex-direction: column;
+                    gap: f.rem(20);
+                    text-align: center;
+
+                    & li {
+                        margin: f.rem(20) 0;
+
+                        & a {
+                            text-decoration: none;
+                            color: v.$white;
+                            position: relative;
+                            display: inline-block;
+                            font-size: f.rem(40);
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: f.rem(-5);
+                                left: 0;
+                                width: 0;
+                                height: f.rem(2);
+                                background-color: v.$yellow;
+                                transition: width 0.3s ease;
+                            }
+
+                            &:hover::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: f.rem(20);
+            right: f.rem(20);
+            z-index: 100;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            img {
+                width: f.rem(50);
+                height: auto;
+            }
+        }
+
+        .close-menu {
+            position: absolute;
+            top: f.rem(20);
+            right: f.rem(20);
+            background: none;
+            border: none;
+            padding: f.rem(10);
+            cursor: pointer;
+            z-index: 1000;
+
+            img {
+                width: f.rem(50);
+                height: auto;
+            }
+        }
+
+   }
+}

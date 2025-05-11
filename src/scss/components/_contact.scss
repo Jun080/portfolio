@@ -1,0 +1,50 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	#contact {
+        padding: f.rem(100) 0;
+
+        & .grid-2 {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            gap: f.rem(150);
+            padding: f.rem(80) 0 f.rem(30);
+        }
+
+        & a {
+            text-decoration: none;
+            color: v.$white;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: f.rem(-5);
+                left: 0;
+                width: 0;
+                height: f.rem(2);
+                background-color: v.$yellow;
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 978px) {
+            padding: f.rem(80) 0;
+        }
+
+        @media (max-width: 567px) {
+            padding: f.rem(50) 0;
+
+            & .grid-2 {
+                grid-template-columns: 1fr;
+                gap: f.rem(30);
+            }
+        }
+    }
+}

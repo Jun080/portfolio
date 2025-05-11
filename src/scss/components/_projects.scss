@@ -1,0 +1,123 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	#projects {
+        margin-top: f.rem(-20);
+        background-color: v.$grey;
+        padding: f.rem(100) 0;
+
+        & h2 {
+            margin-bottom: f.rem(50);
+        }
+
+        & .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(50);
+
+            & .container-all-projects {
+                display: grid;
+                grid-template-columns: 522px 522px;
+                column-gap: f.rem(20);
+                row-gap: f.rem(40);
+                
+                & .img-project {
+                    max-width: 522px;
+                }
+
+                & .text {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 f.rem(20);
+                }
+            }
+
+            & .project-card {
+                display: flex;
+                flex-direction: column;
+                gap: f.rem(20);
+
+                & img:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            & .projet-full {
+                & .img-project {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: f.rem(20);
+                    object-fit: cover;
+                }
+
+                & .text {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 f.rem(50);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 978px) {
+        #projects {
+            padding: f.rem(80) 0;
+
+            & .projects-container {
+                gap: f.rem(40);
+
+                & .container-all-projects {
+                    grid-template-columns: 1fr 1fr;
+                    row-gap: f.rem(30);
+                    justify-items: center;
+
+                    & .img-project {
+                        max-width: 100%;
+                    }
+
+                    & .text {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin: 0;
+                        gap: f.rem(10);
+                    }
+                }
+
+                & .projet-full {
+                    & .text {
+                        align-items: flex-start;
+                        margin: 0;
+                        gap: f.rem(10);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 567px) {
+        #projects {
+            padding: f.rem(60) 0;
+
+            & .projects-container {
+                gap: f.rem(30);
+
+                & .project-card {
+                    gap: f.rem(15);
+                }
+
+                & .container-all-projects {
+                    row-gap: f.rem(25);
+                    grid-template-columns: 1fr;
+                }
+
+                & .projet-full {
+                    & .text {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
+}

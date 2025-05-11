@@ -1,0 +1,165 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@layer components {
+	#header {
+        margin: f.rem(20);
+        margin-top: f.rem(140);
+        background-color: v.$green;
+        border-bottom-left-radius: f.rem(20);
+        border-bottom-right-radius: f.rem(20);
+        padding: f.rem(50) f.rem(75);
+        display: flex;
+        gap: f.rem(50);
+
+        & .img-laptop {
+            display: block;
+        }
+
+        & .img-tab {
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            margin: f.rem(160) f.rem(20) f.rem(120) f.rem(20);
+            border-bottom-right-radius: f.rem(25);
+            border-bottom-left-radius: f.rem(25);
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: f.rem(20);
+                left: f.rem(20);
+                width: calc(100% - 40px);
+                height: 150px;
+                background-image: url("../../../images/top-header.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                z-index: 2;
+            }
+        }
+
+        & .container .header-content {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: 48% 30%;
+            gap: f.rem(50);
+        }
+
+        & .img-morgane {
+            height: f.rem(450);
+        }
+
+        .banner-contact {
+            background-color: v.$yellow;
+            border-radius: f.rem(20);
+            padding: f.rem(15);
+            padding-right: f.rem(20);
+            display: flex;
+            align-items: center;
+            max-width: f.rem(1064);
+            margin: f.rem(50) auto 0;
+            gap: f.rem(20);
+
+            & .mail-square {
+                background-color: v.$green;
+                border-radius: f.rem(10);
+                padding: f.rem(10);
+                display: flex;
+                align-items: center;
+                gap: f.rem(20);
+            }
+
+            & .contact-content {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 978px) {
+        #header {
+            flex-direction: column;
+            margin: f.rem(0);
+            padding: f.rem(40) f.rem(40);
+            gap: f.rem(30);
+
+            & .container .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+
+                & .img-morgane {
+                    height: f.rem(350);
+                    margin: 0 auto;
+                }
+            }
+
+            & .img-laptop {
+                display: none;
+            }
+
+            & .img-tab {
+                display: block;
+            }
+
+            .banner-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 100%;
+                padding: f.rem(20);
+                gap: f.rem(30);
+
+                & .contact-content {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: f.rem(15);
+                }
+
+                & .text-tab {
+                    display: flex;
+                    gap: f.rem(20);
+
+                    & * {
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 567px) {
+        #header {
+            padding: f.rem(30) f.rem(20);
+            gap: f.rem(20);
+
+            & .container {
+                gap: f.rem(30);
+            }
+
+            & .img-morgane {
+                height: f.rem(250);
+            }
+
+            .banner-contact {
+                border-radius: f.rem(15);
+                padding: f.rem(15);
+
+                & .mail-square {
+                    padding: f.rem(8);
+                    height: f.rem(42);
+                }
+
+                & .contact-content {
+                    align-items: stretch;
+
+                    & .btn {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+}

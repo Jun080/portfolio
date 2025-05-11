@@ -1,0 +1,34 @@
+// Colors
+$black: #131713;
+$white: #e8e8e8;
+$grey: #DBD2C1;
+$yellow: #EEAA2B;
+$green: #365139;
+$pale-green: #CEDED0;
+$dark-green: #353D2F;
+$text-red: #5D2415;
+$red: #E86645;
+$pale-red: #F6C3B6;
+$pale-orange: #F9E1B4;
+
+$colors: (
+	"black": $black,
+	"white": $white,
+	"grey": $grey,
+	"green": $green,
+	"yellow": $yellow,
+	"pale-green": $pale-green,
+	"dark-green": $dark-green,
+	"red": $red,
+	"text-red": $text-red,
+	"pale-red": $pale-red,
+	"pale-orange": $pale-orange,
+);
+
+$breakpoints: (
+	"sm": 576px,
+	"md": 768px,
+	"lg": 992px,
+	"xl": 1200px,
+	"xxl": 1400px,
+);

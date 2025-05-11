@@ -1,0 +1,128 @@
+@use "fonts" as f;
+@use "../partials/functions" as fu;
+@use "sass:color";
+@use "variables" as v;
+@layer base {
+	:root {
+		@each $name, $value in v.$colors {
+			--#{$name}: #{$value};
+		}
+	}
+
+	:target {
+		scroll-margin-top: fu.rem(130);
+	}
+
+	:target#header {
+		scroll-margin-top: fu.rem(160);
+	}
+
+	body {
+		font-family: f.$fontBody;
+		background-color: v.$grey;
+		height: calc(100vh - fu.rem(40));
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: f.$fontTitle;
+		margin: 0;
+	}
+
+	h1,
+	.h1 {
+		font-size: fu.rem(125);
+		line-height: fu.rem(110);
+	}
+
+	.h1-small {
+		font-size: fu.rem(100);
+		line-height: fu.rem(100);
+	}
+
+	h2,
+	.h2 {
+		font-size: fu.rem(30);
+		line-height: fu.rem(30);
+	}
+
+	.h2-big {
+		font-size: fu.rem(50);
+		line-height: fu.rem(50);
+	}
+
+	.banner-text {
+		font-family: f.$fontBody;
+		font-size: fu.rem(24);
+		line-height: fu.rem(24);
+	}
+
+	p {
+		font-size: fu.rem(16);
+		line-height: fu.rem(16);
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	* {
+		transition: all 0.5s;
+		scroll-behavior: smooth;
+	}
+
+	.anim-bg-pale-orange {
+		background-color: transparent;
+	}
+
+	.border-radius-top-20 {
+		border-top-left-radius: fu.rem(20);
+		border-top-right-radius: fu.rem(20);
+	}
+
+	@media (max-width: 978px) {
+		h1,
+		.h1 {
+			font-size: fu.rem(70);
+			line-height: fu.rem(70);
+		}
+
+		.h1-small {
+			font-size: fu.rem(60);
+			line-height: fu.rem(60);
+		}
+
+		.h2-big {
+			font-size: fu.rem(40);
+			line-height: fu.rem(40);
+		}
+	}
+
+	@media (max-width: 567px) {
+		h1,
+		.h1 {
+			font-size: fu.rem(50);
+			line-height: fu.rem(50);
+		}
+
+		.h1-small {
+			font-size: fu.rem(40);
+			line-height: fu.rem(40);
+		}
+
+		.h2-big {
+			font-size: fu.rem(30);
+			line-height: fu.rem(30);
+		}
+	}
+}

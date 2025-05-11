@@ -1,0 +1,16 @@
+@use "partials/layers";
+@use "vendors/modern-normalize.css";
+
+@use "partials/globals";
+@use "partials/utilities";
+@use "partials/layout";
+
+@use "components/menu";
+@use "components/button";
+@use "components/container";
+
+@use "components/header";
+@use "components/experiences";
+@use "components/projects";
+@use "components/bannerProjects";
+@use "components/contact";

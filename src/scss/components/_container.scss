@@ -1,0 +1,51 @@
+@use "../partials/variables" as v;
+
+@layer components {
+    .container {
+        width: calc(100% - 50px);
+        margin: 0 auto;
+
+        @media (min-width: 567px) {
+            width: calc(100% - 80px);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            width: 1140px;
+            margin: 0 auto;
+        }
+    }
+
+    .container-small {
+        width: calc(100% - 80px);
+        margin: 0 auto;
+
+        @media (min-width: 567px) {
+            width: calc(100% - 150px);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            width: calc(100% - 120px);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1400px) {
+            width: 1064px;
+            margin: 0 auto;
+        }
+    }
+
+    #header {
+        @media (min-width: 1024px) {
+            margin: 0 20px;
+        }
+
+        .container {
+            @media (min-width: 1024px) {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
