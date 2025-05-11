@@ -10,6 +10,10 @@
             grid-template-columns: max-content max-content;
             gap: f.rem(150);
             padding: f.rem(80) 0 f.rem(30);
+
+            &:last-of-type {
+                padding: f.rem(0) 0 f.rem(80);
+            }
         }
 
         & a {
