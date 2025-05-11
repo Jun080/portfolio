@@ -264,12 +264,12 @@
   @media (max-width: 567px) {
     h1,
     .h1 {
-      font-size: 3.125rem;
-      line-height: 3.125rem;
+      font-size: 2.8125rem;
+      line-height: 2.8125rem;
     }
     .h1-small {
-      font-size: 2.5rem;
-      line-height: 2.5rem;
+      font-size: 2.1875rem;
+      line-height: 2.1875rem;
     }
     .h2-big {
       font-size: 1.875rem;
@@ -12992,13 +12992,14 @@
   @media (max-width: 567px) {
     #header {
       padding: 1.875rem 1.25rem;
+      padding-top: 6.25rem;
       gap: 1.25rem;
     }
     #header .container {
       gap: 1.875rem;
     }
     #header .img-morgane {
-      height: 15.625rem;
+      height: auto;
     }
     #header .banner-contact {
       border-radius: 0.9375rem;

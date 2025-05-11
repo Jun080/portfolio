@@ -131,6 +131,7 @@
     @media (max-width: 567px) {
         #header {
             padding: f.rem(30) f.rem(20);
+            padding-top: f.rem(100);
             gap: f.rem(20);
 
             & .container {
@@ -138,7 +139,7 @@
             }
 
             & .img-morgane {
-                height: f.rem(250);
+                height: auto;
             }
 
             .banner-contact {
